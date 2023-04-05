@@ -16,12 +16,12 @@ class BotManController extends Controller
    
         $botman->hears('{message}', function($botman, $message) {
    
-            if ($message == 'Hi') {
+            if ($message == 'Olá') {
                 $this->askName($botman);
             }
             
             else{
-                $botman->reply("Write 'Hi' for testing...");
+                $botman->reply("Diga 'Olá' para iniciar...");
             }
    
         });
@@ -34,11 +34,11 @@ class BotManController extends Controller
      */
     public function askName($botman)
     {
-        $botman->ask('Hello! What is your Name?', function(Answer $answer) {
+        $botman->ask('Olá, qual o seu nome?', function(Answer $answer) {
    
             $name = $answer->getText();
    
-            $this->say('Nice to meet you '.$name);
+            $this->say('Prazer em te conhecer '.$name);
         });
     }
 }
